@@ -52,8 +52,95 @@
         <h1 class="page_title">Encoding Basics for Notation</h1>
         <h2 class="page_subtitle">Week 3</h2>
 
-        <h2>Introduction</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus expedita sunt pariatur! Fuga maxime molestiae qui ipsam nisi. Iste fuga dicta dignissimos ut quia, blanditiis alias error sapiente reiciendis libero.</p>
+        <h2>Converting & Rendering an MEI File</h2>
+        <p class="task">Export the score you created last week to MusicXML and MEI. Then render your MEI file using Verovio.</p>
+
+        <p>Rendered MEI file:</p>
+        <div id="app">Verovio is loading...</div>
+        <script type="module">
+            import 'https://www.verovio.org/javascript/app/verovio-app.js';
+
+            const options = {
+                defaultView: 'responsive', // default is 'responsive', alternative is 'document'
+                defaultZoom: 3, // 0-7, default is 4
+                enableResponsive: true, // default is true
+                enableDocument: true // default is true
+            }
+            var file = "portfolio_assets/week-3/quartet.mei";
+            const app = new Verovio.App(document.getElementById("app"), options);
+            fetch(file)
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(text) {
+                    app.loadData(text);
+                });
+        </script>
+
+        <hr>
+
+        <h2>Comparing MusixXML & MEI</h2>
+        <p class="task">Compare 3 elements in the MusicXML file to the corresponding ones in MEI. Think about: which attributes can be employed in each standard, which parents and children can be used, and try to think of the implications of these differences.</p>
+
+        <p>Where MusicXML and MEI share many differences, such as both being written in the XML format, the two formats differ as they were designed and built upon different primary purposes. Where MusicXML exists as an interchange between different proprietary notation software formats, focusing on western notational accuracy, MEI emphasises human readability through its structure, and extensive coverage of content outside of notation alone.</p>
+        <p>The differing philosophies of the formats can be exemplified by the differences in their file structure.</p>
+
+        <p>Note Elements:</p>
+        <ul>
+          <li>
+            MusicXML structures notes as parent elements containing properties within nested child elements.
+            <ul>
+              <li>e.g. elements like &lt;pitch&gt;, &lt;duration&gt; and &lt;type&gt; can be found inside the parent &lt;note&gt; element.</li>
+              <li>Child elements of &lt;note&gt; also can have properties within them, for example the &lt;pitch&gt; element nests elements &lt;step&gt; and &lt;octave&gt;, defining the pitch.</li>
+              <li>In this format, &lt;note&gt; elements generally consist of several lines, structured in a way which is clear for a computer to read and render.</li>
+            </ul>
+          </li>
+          <li>
+            MEI notes are generally single, self-closing tags, with properties within attributes inside the tag itself.
+            <ul>
+              <li>Instead of nesting a &ltpitch&gt; element, MEI notes contain attributes such as “oct” or “pname” which define the pitch of the &ltnote&gt; tag.</li>
+              <li>Other properties like stem direction or duration are also included as attributes (stem.dir and dur/dur.ppq respectively).</li>
+              <li>In this format, &ltnote&gt; elements generally use a single line, making it more intuitive to read, as well as to write manually.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Time Signature:</p>
+        <ul>
+          <li>
+            In MusicXML, time signatures are represented by a &lt;time&gt; element.
+            <ul>
+              <li>Within this element are nested elements which define the beat type and number of beats in their respective &lt;beats&gt; and &lt;beat-type&gt; elements.</li>
+            </ul>
+          </li>
+          <li>
+            In MEI, the same time signature is defined in the self-enclosing &lt;metreSig&gt; element.
+            <ul>
+              <li>Similar to &lt;note&gt; tags, instead of assigning properties within children like in MusicXML, attributes are written in the tag itself.</li>
+              <li>The attributes “count” and “unit” define the number of beats and beat-type.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Parts List:</p>
+        <ul>
+          <li>
+            In MusicXML, the parts list is defined within the &lt;part-list&gt; element.
+            <ul>
+              <li>Each part is contained in a &lt;score-part&gt; element, and includes child elements such as &lt;part-name&gt; and &lt;part-abbreviation&gt; for the part name and its associated abbreviation.</li>
+              <li>Since MusicXML is designed for the exchange of digital music notation, it includes midi data for the use of playback, which is a feature of many notation softwares.</li>
+              <li>The element &lt;midi-instrument&gt; contains nested elements like &lt;midi-channel&gt;, &lt;volume&gt;, and &lt;pan&gt;. This information is useful when exchanging and converting the file to other notation softwares, as the specific software is able to interpret this information and set the instrument’s midi data (instrument name, volume, pan, etc.) accordingly.</li>
+            </ul>
+          </li>
+          <li>
+            In MEI, the parts list is found in the &lt;staffGrp&gt; element.
+            <ul>
+              <li>Parts are similarly defined in &lt;staffDef&gt; elements.</li>
+              <li>Each &lt;staffDef&gt; element includes child elements such as &lt;label&gt; and &lt;labelAbbr&gt; for the part name and its abbreviation.</li>
+              <li>Although there is midi data in this format as well, there is less emphasis on it, instead more detail is given to the attributes of the part, including time and key signatures as well as which clef is used for the part.</li>
+            </ul>
+          </li>
+        </ul>
 
     </section>
     
