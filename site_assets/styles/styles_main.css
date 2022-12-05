@@ -15,6 +15,74 @@ body, html {
 }
 
 
+/* Navigation */
+nav {
+    width: 28%;
+    height: 98%;
+    background-color: white;
+    position: fixed;
+    right: 5px;
+    top: 10px;
+    margin: 0px;
+    padding: 0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+nav li {
+    list-style-type: none;
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 18px;
+    background-color: white;
+    padding: 6% 0;
+    width: 98%;
+    margin: auto;
+    transition: all 0.1s ease-in-out;
+}
+nav li:hover {
+    background-color: antiquewhite;
+    padding: 8% 0;
+}
+nav li a:link {
+    text-decoration: none;
+    color: black;
+}
+nav li a:link:hover {
+    font-weight: bold;
+}
+nav li a:active {
+    color: gray;
+}
+nav hr {
+    margin: 0;
+}
+
+/* Content box */
+section.content {
+    width: 70%;
+    background-color: white;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 6px;
+}
+section.content h1.page_title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 80px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+section.content h2.page_subtitle {
+    margin-top: 0;
+    margin-bottom: 70px;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
 
 /* Back to top button */
 #back2top {
