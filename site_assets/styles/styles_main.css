@@ -1,0 +1,49 @@
+/* Global Styles */
+
+body, html {
+    height: 100%;
+	width: 100%;
+	margin: 0;
+    padding: 0;
+	font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    background-color: #EEE;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Back to top button */
+#back2top {
+    display: inline-block;
+    background-color: #09C;
+    background-image: url("../images/scroll_arrow.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+  }
+  #back2top:hover {
+    cursor: pointer;
+    background-color: #6bb2d9;
+  }
+  #back2top:active {
+    background-color: lightgray;
+  }
+  #back2top.show {
+    opacity: 1;
+    visibility: visible;
+  }
