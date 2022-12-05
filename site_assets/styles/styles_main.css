@@ -82,6 +82,9 @@ section.content h2.page_subtitle {
     text-align: center;
     
 }
+section.content h2 {
+    margin-top: 50px;
+}
 
 
 /* Back to top button */
