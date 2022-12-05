@@ -60,12 +60,11 @@ nav hr {
 }
 
 /* Content box */
-section.content {
+section.content, .bottom-nav {
     width: 70%;
     background-color: white;
     margin: 10px;
     padding: 30px;
-    padding-bottom: 80px;
     border-radius: 6px;
 }
 /* Content styles */
@@ -102,6 +101,35 @@ section.content ul {
     list-style-type: ">  ";
 }
 
+/* Bottom navigation buttons */
+.bottom-nav {
+    padding-bottom: 60px;
+    margin-bottom: -14px;
+}
+.bottom-nav a {
+    font-size: 20px;
+    max-width: 50%;
+    transition: all 0.1s ease-in-out;
+    font-weight: bold;
+    color: #09C;
+}
+.bottom-nav a:link {
+    text-decoration: none;
+}
+.bottom-nav a:visited {
+    color: #09C;
+}
+.bottom-nav a:hover {
+    transform: scale(1.05);
+}
+.bottom-nav a#previous-week {
+    float: left;
+    margin-left: 10vw;
+}
+.bottom-nav a#next-week {
+    float: right;
+    margin-right: 10vw;
+}
 
 /* Back to top button */
 #back2top {
@@ -116,8 +144,8 @@ section.content ul {
     text-align: center;
     border-radius: 4px;
     position: fixed;
-    bottom: 30px;
-    right: 31%;
+    bottom: 25px;
+    right: 30.35%;
     transition: background-color .3s, opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
