@@ -123,6 +123,9 @@ section.content hr {
 section.content ul {
     list-style-type: ">  ";
 }
+section.content ul li {
+    margin-bottom: 10px;
+}
 section.content a:link, section.content a:visited {
     color: #09C;
 }

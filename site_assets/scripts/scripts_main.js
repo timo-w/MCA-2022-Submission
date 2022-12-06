@@ -2,13 +2,6 @@
 
 $(document).ready(function(){
 
-	// Animate Scrolling on link click
-	$('a[href*="#"]').on('click', function (e) {
-		$('html, body').animate({
-			scrollTop: $($(this).attr('href')).offset().top
-		}, 600, 'swing');
-	});
-
 	// Back to top button
 	var btn = $('#back2top');
 	$(window).scroll(function() {
