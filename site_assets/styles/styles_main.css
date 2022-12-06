@@ -120,6 +120,16 @@ section.content a:link, section.content a:visited {
 section.content a:active {
     color: rgb(178, 224, 239);
 }
+/* Table styles */
+section.content table {
+    font-size: 14px;
+}
+section.content th {
+    background-color: #EEE;
+}
+section.content th, section.content td {
+    padding: 10px;
+}
 
 /* Bottom navigation buttons */
 .bottom-nav {
