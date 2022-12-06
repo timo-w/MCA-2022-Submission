@@ -16,11 +16,11 @@ body, html {
 
 /* Highlight Styles */
 ::selection {
-	background: #f1c232;
+	background: #6bb2d9;
 	color: white;
 }
 ::-moz-selection {
-	background: #f1c232;
+	background: #6bb2d9;
 	color: white;
 }
 
