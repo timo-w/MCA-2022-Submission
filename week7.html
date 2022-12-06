@@ -14,6 +14,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="site_assets/scripts/scripts_main.js"></script>
+
+    <!-- Week 7 links & scripts -->
+    <link rel="stylesheet" href="portfolio_assets/week-7/CETEIcean.css">
+    <link rel="stylesheet" href="portfolio_assets/week-7/style.css">
+    <script src="portfolio_assets/week-7/CETEI.js"></script>
     
     <title>Home - MCA-2022</title>
     
@@ -52,8 +57,63 @@
         <h1 class="page_title">Challenges to Music Curation</h1>
         <h2 class="page_subtitle">Week 7</h2>
 
-        <h2>Introduction</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus expedita sunt pariatur! Fuga maxime molestiae qui ipsam nisi. Iste fuga dicta dignissimos ut quia, blanditiis alias error sapiente reiciendis libero.</p>
+        <h2>Update & Render Metadata</h2>
+        <p class="task">Create a second version of your MEI file with the updated metadata. Render your revised MEI metadata along with your score.</p>
+
+        <div id="app">Verovio is loading...</div>
+        <script type="module">
+            import 'https://www.verovio.org/javascript/app/verovio-app.js';
+
+            const options = {
+                defaultView: 'responsive', // default is 'responsive', alternative is 'document'
+                defaultZoom: 3, // 0-7, default is 4
+                enableResponsive: true, // default is true
+                enableDocument: true // default is true
+            }
+            var file = "portfolio_assets/week-7/week-7-quartet.mei";
+            const app = new Verovio.App(document.getElementById("app"), options);
+            fetch(file)
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(text) {
+                    app.loadData(text);
+                });
+        </script>
+        <script>
+            // Get, parse, and show TEI data
+            var CETEIcean = new CETEI()
+            CETEIcean.getHTML5("data/example.xml", function(data) {
+              document.getElementById("TEI").appendChild(data)
+            })
+            // Get, parse and show MEI header data
+            var CETEI4MEI = new CETEI()
+            CETEI4MEI.addBehaviors({
+              namespaces: {
+                mei: "http://www.music-encoding.org/ns/mei"
+              }
+            })
+            CETEI4MEI.getHTML5("portfolio_assets/week-7/week-7-quartet.mei", function(data) {
+              // get header
+              var meiHead = data.querySelector('mei-meiHead')
+              document.getElementById("MEImeta").appendChild(meiHead)
+            })
+            var vrvToolkit = new verovio.toolkit()
+            vrvToolkit.setOptions(options = {
+                pageHeight: 500,
+                pageWidth: 1000,
+                ignoreLayout: 1,
+                border: 20,
+                scale: 50,
+                adjustPageHeight: true
+            })
+            fetch("portfolio_assets/week-7/week-7-quartet.mei").then(function( response ) {
+                response.text().then(function( data ) {
+                  var svg = vrvToolkit.renderData(data, {})
+                  document.getElementById('MEI').innerHTML = svg
+                })
+            })
+          </script>
 
     </section>
     
