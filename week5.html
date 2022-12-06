@@ -34,7 +34,7 @@
         <hr>
         <li><a href="week4.html">Computational Analysis of Notated Music</a></li>
         <hr>
-        <li><a href="#">Standards in Curation</a></li>
+        <li class="active-page"><a href="#">Standards in Curation</a></li>
         <hr>
         <li><a href="week7.html">Challenges to Music Curation</a></li>
         <hr>
@@ -52,8 +52,43 @@
         <h1 class="page_title">Standards in Curation</h1>
         <h2 class="page_subtitle">Week 5</h2>
 
-        <h2>Introduction</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus expedita sunt pariatur! Fuga maxime molestiae qui ipsam nisi. Iste fuga dicta dignissimos ut quia, blanditiis alias error sapiente reiciendis libero.</p>
+        <h2>Create Metadata Schema</h2>
+        <p class="task">Create a metadata schema by listing the elements (or a subset of at least 5 elements) that your group chose back on Tuesday.</p>
+        <p>Chosen Elements:</p>
+        <ul>
+            <li>Name</li>
+            <li>Author/Composer</li>
+            <li>Year Produced/Composed</li>
+            <li>Intrumentation</li>
+            <li>Tempo</li>
+            <li>Copyright Information</li>
+        </ul>
+
+        <hr>
+
+        <h2>Add Metadata to MEI File</h2>
+        <p class="task">Modify your MEI document according to the schema that you have created. Where possible, enrich your data by linking it to existing authorities as discussed in yesterday&quot;s lecture using the @auth.uri attribute.</p>
+
+        <div id="app">Verovio is loading...</div>
+        <script type="module">
+            import 'https://www.verovio.org/javascript/app/verovio-app.js';
+
+            const options = {
+                defaultView: 'responsive', // default is 'responsive', alternative is 'document'
+                defaultZoom: 3, // 0-7, default is 4
+                enableResponsive: true, // default is true
+                enableDocument: true // default is true
+            }
+            var file = "portfolio_assets/week-5/week-5-quartet.mei";
+            const app = new Verovio.App(document.getElementById("app"), options);
+            fetch(file)
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(text) {
+                    app.loadData(text);
+                });
+        </script>
 
     </section>
     

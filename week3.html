@@ -30,7 +30,7 @@
         <hr>
         <li><a href="week2.html">Notation Basics</a></li>
         <hr>
-        <li><a href="#">Encoding Basics for Notation</a></li>
+        <li class="active-page"><a href="#">Encoding Basics for Notation</a></li>
         <hr>
         <li><a href="week4.html">Computational Analysis of Notated Music</a></li>
         <hr>
@@ -55,7 +55,6 @@
         <h2>Converting & Rendering an MEI File</h2>
         <p class="task">Export the score you created last week to MusicXML and MEI. Then render your MEI file using Verovio.</p>
 
-        <p>Rendered MEI file:</p>
         <div id="app">Verovio is loading...</div>
         <script type="module">
             import 'https://www.verovio.org/javascript/app/verovio-app.js';
@@ -66,7 +65,7 @@
                 enableResponsive: true, // default is true
                 enableDocument: true // default is true
             }
-            var file = "portfolio_assets/week-3/quartet.mei";
+            var file = "portfolio_assets/week-3/week-3-quartet.mei";
             const app = new Verovio.App(document.getElementById("app"), options);
             fetch(file)
                 .then(function(response) {
