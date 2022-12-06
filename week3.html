@@ -100,7 +100,7 @@
           <li>
             MEI notes are generally single, self-closing tags, with properties within attributes inside the tag itself.
             <ul>
-              <li>Instead of nesting a &ltpitch&gt; element, MEI notes contain attributes such as “oct” or “pname” which define the pitch of the &ltnote&gt; tag.</li>
+              <li>Instead of nesting a &ltpitch&gt; element, MEI notes contain attributes such as &quot;oct&quot; or &quot;pname&quot; which define the pitch of the &ltnote&gt; tag.</li>
               <li>Other properties like stem direction or duration are also included as attributes (stem.dir and dur/dur.ppq respectively).</li>
               <li>In this format, &ltnote&gt; elements generally use a single line, making it more intuitive to read, as well as to write manually.</li>
             </ul>
@@ -119,7 +119,7 @@
             In MEI, the same time signature is defined in the self-enclosing &lt;metreSig&gt; element.
             <ul>
               <li>Similar to &lt;note&gt; tags, instead of assigning properties within children like in MusicXML, attributes are written in the tag itself.</li>
-              <li>The attributes “count” and “unit” define the number of beats and beat-type.</li>
+              <li>The attributes &quot;count&quot; and &quot;unit&quot; define the number of beats and beat-type.</li>
             </ul>
           </li>
         </ul>
@@ -131,7 +131,7 @@
             <ul>
               <li>Each part is contained in a &lt;score-part&gt; element, and includes child elements such as &lt;part-name&gt; and &lt;part-abbreviation&gt; for the part name and its associated abbreviation.</li>
               <li>Since MusicXML is designed for the exchange of digital music notation, it includes midi data for the use of playback, which is a feature of many notation softwares.</li>
-              <li>The element &lt;midi-instrument&gt; contains nested elements like &lt;midi-channel&gt;, &lt;volume&gt;, and &lt;pan&gt;. This information is useful when exchanging and converting the file to other notation softwares, as the specific software is able to interpret this information and set the instrument’s midi data (instrument name, volume, pan, etc.) accordingly.</li>
+              <li>The element &lt;midi-instrument&gt; contains nested elements like &lt;midi-channel&gt;, &lt;volume&gt;, and &lt;pan&gt;. This information is useful when exchanging and converting the file to other notation softwares, as the specific software is able to interpret this information and set the instrument&apos;s midi data (instrument name, volume, pan, etc.) accordingly.</li>
             </ul>
           </li>
           <li>

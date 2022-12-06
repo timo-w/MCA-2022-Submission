@@ -49,6 +49,7 @@ nav li {
     width: 98%;
     margin: auto;
     transition: all 0.1s ease-in-out;
+    border-radius: 10px;
 }
 nav li:hover {
     background-color: rgb(178, 224, 239);
