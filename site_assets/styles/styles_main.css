@@ -163,11 +163,11 @@ section.content th, section.content td {
 }
 .bottom-nav a#previous-week {
     float: left;
-    margin-left: 10vw;
+    margin-left: 8vw;
 }
 .bottom-nav a#next-week {
     float: right;
-    margin-right: 10vw;
+    margin-right: 8vw;
 }
 
 /* Back to top button */
