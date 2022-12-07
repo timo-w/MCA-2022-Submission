@@ -56,6 +56,11 @@
         <p class="task">For each track, load and add 3 panes. One should be a Spectrogram, one a Mel Frequency Cepstral Coefficients (MFCCs), and one a Chromagram. Take a screenshot of the panes. Save the three annotation layers as individual CSV files (i.e. the raw data).</p>
 
         <h3>Dover Quartet</h3>
+        <p>Audio clip:</p>
+        <audio controls>
+            <source src="portfolio_assets/week-9/dover/dover.wav" type="audio/wav">
+            Your browser does not support this audio element.
+        </audio>
         <p>Spectrogram (<a href="portfolio_assets/week-9/dover/dover_spectrogram.csv">download CSV</a>):</p>
         <img src="portfolio_assets/week-9/dover/dover_spectrogram.png" width="90%">
         <p>MFCCs (<a href="portfolio_assets/week-9/dover/dover_mfcc.csv">download CSV</a>):</p>
@@ -64,6 +69,11 @@
         <img src="portfolio_assets/week-9/dover/dover_chromagram.png" width="90%">
 
         <h3>Emerson Quartet</h3>
+        <p>Audio clip:</p>
+        <audio controls>
+            <source src="portfolio_assets/week-9/emerson/emerson.wav" type="audio/wav">
+            Your browser does not support this audio element.
+        </audio>
         <p>Spectrogram (<a href="portfolio_assets/week-9/emerson/emerson_spectrogram.csv">download CSV</a>):</p>
         <img src="portfolio_assets/week-9/emerson/emerson_spectrogram.png" width="90%">
         <p>MFCCs (<a href="portfolio_assets/week-9/emerson/emersonr_mfcc.csv">download CSV</a>):</p>
@@ -72,6 +82,11 @@
         <img src="portfolio_assets/week-9/emerson/emerson_chromagram.png" width="90%">
 
         <h3>Menuhin Competition</h3>
+        <p>Audio clip:</p>
+        <audio controls>
+            <source src="portfolio_assets/week-9/menuhin/menuhin.wav" type="audio/wav">
+            Your browser does not support this audio element.
+        </audio>
         <p>Spectrogram (<a href="portfolio_assets/week-9/menuhin/menuhin_spectrogram.csv">download CSV</a>):</p>
         <img src="portfolio_assets/week-9/menuhin/menuhin_spectrogram.png" width="90%">
         <p>MFCCs (<a href="portfolio_assets/week-9/menuhin/menuhinr_mfcc.csv">download CSV</a>):</p>
@@ -85,14 +100,29 @@
         <p class="task">Compute and visualize the histogram of the features for the three tracks.</p>
 
         <h3>Dover Quartet</h3>
+        <p>Audio clip:</p>
+        <audio controls>
+            <source src="portfolio_assets/week-9/dover/dover.wav" type="audio/wav">
+            Your browser does not support this audio element.
+        </audio>
         <p>MFCC Histogram (left) & Chromagram Histogram (right):</p>
         <img src="portfolio_assets/week-9/dover/dover_mfcc_histogram.png" width="40%"><img src="portfolio_assets/week-9/dover/dover_chromagram_histogram.png" width="40%">
 
         <h3>Emerson Quartet</h3>
+        <p>Audio clip:</p>
+        <audio controls>
+            <source src="portfolio_assets/week-9/emerson/emerson.wav" type="audio/wav">
+            Your browser does not support this audio element.
+        </audio>
         <p>MFCC Histogram (left) & Chromagram Histogram (right):</p>
         <img src="portfolio_assets/week-9/emerson/emerson_mfcc_histogram.png" width="40%"><img src="portfolio_assets/week-9/emerson/emerson_chromagram_histogram.png" width="40%">
 
         <h3>Menuhin Competition</h3>
+        <p>Audio clip:</p>
+        <audio controls>
+            <source src="portfolio_assets/week-9/menuhin/menuhin.wav" type="audio/wav">
+            Your browser does not support this audio element.
+        </audio>
         <p>MFCC Histogram (left) & Chromagram Histogram (right):</p>
         <img src="portfolio_assets/week-9/menuhin/menuhin_mfcc_histogram.png" width="40%"><img src="portfolio_assets/week-9/menuhin/menuhin_chromagram_histogram.png" width="40%">
 
@@ -100,7 +130,17 @@
 
         <h2>Compare Histograms</h2>
         <p class="task">For either the MFCC or Chroma feature, compare the histograms for the 3 tracks and highlight/discuss if the histograms capture significant differences between the tracks and if you expected this difference based on listening to the tracks.</p>
-        <p>TODO: That.</p>
+        <p>Comparing the Chroma Feature histograms, a few differences have been captured:</p>
+        <ul>
+            <li>Looking at the the levels, the Dover track is significantly louder than both the Emerson and Menuhin tracks. This is displayed by the larger areas that the Dover histogram takes for each feature.</li>
+            <li>The Dover track also has more prominance on the &quot;C&quot; feature (top-left) - this is obvious when listening to the clip, as there is a repeated C bass note in a large part of the clip (especially the beginning).</li>
+            <li></li>
+        </ul>
+        <p>However, there are stil many similarities when analysing the Chromagrams of these three tracks:</p>
+        <ul>
+            <li>Each track has similar distriutions between features, even though each track represents a different section of a different performance, they are all still recordings of the same piece of music.</li>
+            <li>This piece of music is in C minor, so the &quot;C&quot; and &quot;E&#9837;&quot; features are prominant in all three histograms.</li>
+        </ul>
 
     </section>
     
