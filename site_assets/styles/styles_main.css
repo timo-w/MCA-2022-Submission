@@ -109,8 +109,10 @@ section.content h2.page_subtitle {
 section.content h2 {
     margin-top: 50px;
 }
+section.content p {
+    text-align: justify;
+}
 section.content p.task {
- 
     background-color: #EEE;
     color: gray;
     padding: 20px;
