@@ -149,6 +149,7 @@ section.content th, section.content td {
     margin-bottom: -14px;
 }
 .bottom-nav a {
+    margin-top: 4px;
     font-size: 20px;
     max-width: 50%;
     transition: all 0.1s ease-in-out;
@@ -183,8 +184,8 @@ section.content th, section.content td {
     text-align: center;
     border-radius: 4px;
     position: fixed;
-    bottom: 25px;
-    right: 30.35%;
+    bottom: 22px;
+    right: 30.4%;
     transition: background-color .3s, opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
